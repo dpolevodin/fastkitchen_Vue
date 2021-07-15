@@ -1,7 +1,7 @@
 <template>
     <div class="container-order">
         <div class="product-image">
-            <img src="@/assets/products/cheese.png">
+            <img :src="imgSrc" alt="product image">
         </div>
         <p>{{productName}} {{ price }}$</p>
         <div class="counter">
@@ -18,16 +18,12 @@ export default {
     name: 'FcProductOrder',
     props: {
         productName: String,
+        imgSrc: String
     },
-    // data() {
-    //     return {
-    //         productName: 'cheese',
-    //         price: 2
-    //     }
-    //},
     methods: {
         countUp() {
             this.$store.commit('productToCart', this.productName);
+            console.log(this.getPic())
             },
         countDown() {
             if (this.count > 0) {

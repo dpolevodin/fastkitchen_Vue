@@ -1,10 +1,10 @@
 <template>
   <div class="container">
       <h1>Choose the ingredients</h1>
-      <fc-product-order productName="cheese" />
-      <fc-product-order productName="cucumber" />
-      <fc-product-order productName="bread" />
-      <fc-product-order productName="salami" />
+      <fc-product-order productName="cheese" imgSrc="img/cheese.png" />
+      <fc-product-order productName="cucumber" imgSrc="img/cucumber.png" />
+      <fc-product-order productName="bread" imgSrc="img/bread.png" />
+      <fc-product-order productName="salami" imgSrc="img/salami.png" />
   </div>
 </template>
 
