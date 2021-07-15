@@ -15,15 +15,20 @@
 <script>    
 
 export default {
-    name: 'FcProductOrder',
+    name: 'FkProductOrder',
     props: {
-        productName: String,
-        imgSrc: String
+        productName: {
+            type: String,
+            required: true
+        },
+        imgSrc: {
+            type: String,
+            required: true
+        }
     },
     methods: {
         countUp() {
             this.$store.commit('productToCart', this.productName);
-            console.log(this.getPic())
             },
         countDown() {
             if (this.count > 0) {

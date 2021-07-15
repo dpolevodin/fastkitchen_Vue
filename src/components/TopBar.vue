@@ -1,7 +1,7 @@
 <template>
         <div class="page-header">
             <div id="#fadeshow1">
-                <router-link :to="{name: 'home'}">
+                <router-link :to="{name: 'orders'}">
                     <img src="@/assets/logo.png">
                 </router-link>
             </div>
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    name: 'FcTopBar'
+    name: 'FkTopBar'
 }
 </script>
 

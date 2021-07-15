@@ -1,20 +1,28 @@
 <template>
-  <div class="container">
-      <h1>Choose the ingredients</h1>
-      <fc-product-order productName="cheese" imgSrc="img/cheese.png" />
-      <fc-product-order productName="cucumber" imgSrc="img/cucumber.png" />
-      <fc-product-order productName="bread" imgSrc="img/bread.png" />
-      <fc-product-order productName="salami" imgSrc="img/salami.png" />
-  </div>
+    <div class="main-page">
+        <fk-order-list />
+        <div class="container">
+            <h1>Choose the ingredients</h1>
+            <fk-product-order productName="cheese" imgSrc="img/cheese.png" />
+            <fk-product-order productName="cucumber" imgSrc="img/cucumber.png" />
+            <fk-product-order productName="bread" imgSrc="img/bread.png" />
+            <fk-product-order productName="salami" imgSrc="img/salami.png" />
+        </div>
+    </div>
+        
 </template>
 
 <script>
-import FcProductOrder from '@/components/ProductOrder'
+import FkProductOrder from '@/components/ProductOrder'
+import FkOrderList from '@/components/OrderList'
+
 
 export default {
     name: 'FcOrders',
     components: {
-        FcProductOrder
+        FkProductOrder,
+        FkOrderList
+        
     }
 }
 </script>
