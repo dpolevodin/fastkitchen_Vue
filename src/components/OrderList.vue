@@ -5,46 +5,19 @@
         <span>30$</span>
       </h1>
       <ul>
-          <li>
-              Cheese
+           <li v-for="(value, product) in products" :key="product" >
+              {{product}}
               <div class="product-value">
-                  <span class="marker">{{ productCount }}</span>
+                  <span class="marker">{{ value.value }}</span>
               </div>
               <div class="product-cost">
-                  {{ productSumValue }}$
-              </div>
-          </li>
-          <li>
-              Cheese
-              <div class="product-value">
-                  <span class="marker">3</span>
-              </div>
-              <div class="product-cost">
-                  6$
-              </div>
-          </li>
-          <li>
-              Cheese
-              <div class="product-value">
-                  <span class="marker">3</span>
-              </div>
-              <div class="product-cost">
-                  6$
-              </div>
-          </li>
-          <li>
-              Cheese
-              <div class="product-value">
-                  <span class="marker">3</span>
-              </div>
-              <div class="product-cost">
-                  6$
+                  {{ value.price * value.value }} $
               </div>
           </li>
           <li>
               FINAL COST:
               <div class="product-cost">
-                  6$
+                  {{productSumValue}}$
               </div>
           </li>
       </ul>
@@ -79,15 +52,18 @@
 <script>
 export default {
     name: 'FkOrderList',
+    data() {
+        return {
+            products: this.$store.state.order
+        }
+    },
     computed: {
-        productCount() {
-            return this.$store.state.order.cart.cheese
-        },
         productSumValue() {
-            return this.$store.state.order.price.cheese * this.$store.state.order.cart.cheese;
+            return null;
+            }
+
         }
     }
-}
 
 </script>
 
@@ -148,7 +124,7 @@ h1 {
     position: absolute;
     right: 0px;
     width: 415px;
-    height: 92%;
+    height: 90%;
     background-color: white;
     
 }
@@ -172,4 +148,5 @@ h1 {
     margin-left: 8px;
     margin-top: 3px;
 }
+
 </style>

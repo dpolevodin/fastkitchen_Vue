@@ -38,10 +38,10 @@ export default {
     },
     computed: {
         count() {
-            return this.$store.state.order.cart[this.productName];
+            return this.$store.state.order[this.productName].value;
         },
         price() {
-            return this.$store.state.order.price[this.productName];
+            return this.$store.state.order[this.productName].price;
         }
     }
 }

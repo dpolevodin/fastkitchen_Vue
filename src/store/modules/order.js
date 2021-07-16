@@ -1,24 +1,28 @@
 const state = {
-    cart: {
-        cheese: 0,
-        cucumber: 0,
-        bread: 0,
-        salami: 0
-    },
-    price: {
-        cheese: 3,
-        cucumber: 2,
-        bread: 1,
-        salami: 4
-    }
+        cheese: {
+            value: 0,
+            price: 3
+        },
+        cucumber: {
+            value: 0,
+            price: 2
+        },
+        bread: {
+            value: 0,
+            price: 1
+        },
+        salami: {
+            value: 0,
+            price: 4
+        }
 }
 
 const mutations = {
     productToCart(state, product) {
-        state.cart.[product]++;
+        state.[product].value++;
     },
     deleteProductFromCart(state, product) {
-        state.cart.[product]--;
+        state.[product].value--;
     }
 }
 
