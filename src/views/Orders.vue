@@ -8,6 +8,7 @@
             <fk-product-order productName="bread" imgSrc="img/bread.png" />
             <fk-product-order productName="salami" imgSrc="img/salami.png" />
         </div>
+        <fk-plate />
     </div>
         
 </template>
@@ -15,14 +16,15 @@
 <script>
 import FkProductOrder from '@/components/ProductOrder'
 import FkOrderList from '@/components/OrderList'
+import FkPlate from '@/components/Plate'
 
 
 export default {
     name: 'FcOrders',
     components: {
         FkProductOrder,
-        FkOrderList
-        
+        FkOrderList,
+        FkPlate
     }
 }
 </script>
