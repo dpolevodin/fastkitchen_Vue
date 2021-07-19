@@ -27,14 +27,16 @@
             class="form-control"
             size="46"
             placeholder="+7"
+            v-model="phone"
             />
       </fieldset>
-      
+
       <p>Delivery adress</p>
       <fieldset class="form-group">
         <input type="text" 
             class="form-control" 
             size="46"
+            v-model="deliveryAdress"
             />
       </fieldset>
       
@@ -44,19 +46,32 @@
             class="form-control"
             size="46"
             placeholder="Now"
+            v-model="deliveryTime"
             />
       </fieldset>
+      {{phone}}
+      {{deliveryAdress}}
+      {{deliveryTime}}
+
+      <fk-button acceptOrder="acceptOrders"/>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import FkButton from '@/components/Button'
 
 export default {
     name: 'FkOrderList',
+    components: {
+        FkButton
+    },
     data() {
         return {
-            products: this.$store.state.order
+            products: this.$store.state.order,
+            phone: [],
+            deliveryAdress: [],
+            deliveryTime: [],
         }
     },
     computed: {
@@ -132,7 +147,9 @@ h1 {
 .product-value {
     display: inline-block;
     position: relative;
-    left: 30px;
+    float: right;
+    top: -5px;
+    margin-right: 196px;
     width: 29px;
     height: 29px;
     background-color: #DDEBFF;

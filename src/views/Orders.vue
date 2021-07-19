@@ -40,7 +40,8 @@ h1 {
     display: inline-block;
     margin-top: 130px;
     margin-left: 80px;
-    width: 460px;
+    width:auto;
+    max-width: 480px;
     font-size: 36px;
 }
 </style>

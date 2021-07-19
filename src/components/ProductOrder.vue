@@ -75,8 +75,8 @@ button {
     background-color: #FFFFFF;
     width: 210px;
     height: 240px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-bottom: 40px;
 }
 
 .product-image {
