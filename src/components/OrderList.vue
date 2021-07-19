@@ -17,7 +17,7 @@
           <li>
               FINAL COST:
               <div class="product-cost">
-                  {{productSumValue}}$
+                  {{productSumValue}} $
               </div>
           </li>
       </ul>
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
     name: 'FkOrderList',
     data() {
@@ -58,11 +60,10 @@ export default {
         }
     },
     computed: {
-        productSumValue() {
-            return null;
-            }
-
-        }
+        ...mapGetters([
+            'productSumValue'
+        ])
+    }
     }
 
 </script>
