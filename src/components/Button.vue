@@ -1,5 +1,5 @@
 <template>
-      <button v-on:click="acceptOrder">
+      <button @click="acceptOrder">
           <span>Order now</span>
           <div class="btn-order">
               <span id="total">{{productSumValue}} $</span>
@@ -10,12 +10,16 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import {mutationTypes as deliveryMutationTypes} from '@/store/modules/delivery'
 
 export default {
     name: 'FkButton',
+    props: {
+        payload: Object
+    },
     methods: {
         acceptOrder() {
-            return console.log('Button clicked')
+            this.$store.commit(deliveryMutationTypes.addDeliveryInfo, this.payload)
         }
     },
     computed: {
@@ -24,7 +28,6 @@ export default {
         ])
     }
 }
-
 </script>
 
 <style scoped>

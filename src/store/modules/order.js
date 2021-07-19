@@ -17,11 +17,16 @@ const state = {
         }
 }
 
+export const mutationTypes = {
+    productToCart: '[order] product to cart',
+    deleteProductFromCart: '[order] delete product from cart'
+}
+
 const mutations = {
-    productToCart(state, product) {
+    [mutationTypes.productToCart](state, product) {
         state.[product].value++;
     },
-    deleteProductFromCart(state, product) {
+    [mutationTypes.deleteProductFromCart](state, product) {
         state.[product].value--;
     }
 }

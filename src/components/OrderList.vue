@@ -27,7 +27,7 @@
             class="form-control"
             size="46"
             placeholder="+7"
-            v-model="phone"
+            v-model="deliveryInfo.phone"
             />
       </fieldset>
 
@@ -36,7 +36,7 @@
         <input type="text" 
             class="form-control" 
             size="46"
-            v-model="deliveryAdress"
+            v-model="deliveryInfo.deliveryAdress"
             />
       </fieldset>
       
@@ -46,14 +46,12 @@
             class="form-control"
             size="46"
             placeholder="Now"
-            v-model="deliveryTime"
+            v-model="deliveryInfo.deliveryTime"
             />
       </fieldset>
-      {{phone}}
-      {{deliveryAdress}}
-      {{deliveryTime}}
+    {{AddTotal}}
+      <fk-button :payload='deliveryInfo' />
 
-      <fk-button acceptOrder="acceptOrders"/>
   </div>
 </template>
 
@@ -61,25 +59,34 @@
 import {mapGetters} from 'vuex'
 import FkButton from '@/components/Button'
 
+
 export default {
     name: 'FkOrderList',
     components: {
-        FkButton
+        FkButton,
+        
+    },
+    computed: {
+        ...mapGetters([
+                'productSumValue'
+        ]),
+        AddTotal() {
+            return this.$store.getters.productSumValue
+        }
     },
     data() {
         return {
             products: this.$store.state.order,
-            phone: [],
-            deliveryAdress: [],
-            deliveryTime: [],
+            deliveryInfo: {
+                phone: this.phone,
+                deliveryAdress: this.deliveryAdress,
+                deliveryTime: this.deliveryTime,
+                amount: this.AddTotal
+            }
         }
     },
-    computed: {
-        ...mapGetters([
-            'productSumValue'
-        ])
     }
-    }
+
 
 </script>
 

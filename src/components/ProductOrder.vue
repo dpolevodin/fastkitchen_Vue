@@ -12,7 +12,8 @@
     </div>
 </template>
 
-<script>    
+<script>
+import {mutationTypes as orderMutationTypes} from '@/store/modules/order'
 
 export default {
     name: 'FkProductOrder',
@@ -28,11 +29,11 @@ export default {
     },
     methods: {
         countUp() {
-            this.$store.commit('productToCart', this.productName);
+            this.$store.commit(orderMutationTypes.productToCart, this.productName);
             },
         countDown() {
             if (this.count > 0) {
-                this.$store.commit('deleteProductFromCart', this.productName);
+                this.$store.commit(orderMutationTypes.deleteProductFromCart, this.productName);
             }
             }
     },

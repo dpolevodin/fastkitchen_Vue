@@ -1,5 +1,6 @@
 <template>
     <div class="main-page">
+        <fk-plate />
         <fk-order-list />
         <div class="container">
             <h1>Choose the ingredients</h1>
@@ -8,7 +9,6 @@
             <fk-product-order productName="bread" imgSrc="img/bread.png" />
             <fk-product-order productName="salami" imgSrc="img/salami.png" />
         </div>
-        <fk-plate />
     </div>
         
 </template>
