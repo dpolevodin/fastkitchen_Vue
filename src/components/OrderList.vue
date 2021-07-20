@@ -33,7 +33,7 @@
 
       <p>Delivery adress</p>
       <fieldset class="form-group">
-        <input type="text" 
+        <input type="text"
             class="form-control" 
             size="46"
             v-model="deliveryInfo.deliveryAdress"
@@ -49,42 +49,43 @@
             v-model="deliveryInfo.deliveryTime"
             />
       </fieldset>
-    {{AddTotal}}
-      <fk-button :payload='deliveryInfo' />
+      
+      <fk-slider />
 
+      <fk-button :payload='deliveryInfo' />
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
 import FkButton from '@/components/Button'
+import FkSlider from '@/components/Slider'
+
 
 
 export default {
     name: 'FkOrderList',
     components: {
         FkButton,
-        
+        FkSlider
+    },
+    data() {
+        return {
+            products: this.$store.state.order
+        }
     },
     computed: {
         ...mapGetters([
                 'productSumValue'
         ]),
-        AddTotal() {
-            return this.$store.getters.productSumValue
-        }
-    },
-    data() {
-        return {
-            products: this.$store.state.order,
-            deliveryInfo: {
+        deliveryInfo() {
+            return {
                 phone: this.phone,
                 deliveryAdress: this.deliveryAdress,
                 deliveryTime: this.deliveryTime,
-                amount: this.AddTotal
-            }
+                amount: this.$store.getters.productSumValue}
         }
-    },
+    }
     }
 
 

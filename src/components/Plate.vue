@@ -16,5 +16,6 @@ export default {
   display: inline-block;
   top: 180px;
   left: 600px;
+  filter: drop-shadow(3px 5px 5px rgb(82, 73, 73));
 }
 </style>

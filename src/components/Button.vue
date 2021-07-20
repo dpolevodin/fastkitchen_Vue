@@ -19,7 +19,8 @@ export default {
     },
     methods: {
         acceptOrder() {
-            this.$store.commit(deliveryMutationTypes.addDeliveryInfo, this.payload)
+            this.$store.commit(deliveryMutationTypes.addDeliveryInfo, this.payload);
+            this.$router.push({name: 'orderInfo'})
         }
     },
     computed: {
@@ -37,7 +38,7 @@ button {
     height: 58px;
     border-radius: 5px;
     background: linear-gradient(#99E061, #7AC93B);
-    margin-top: 80px;
+    margin-top: 0;
     margin-left: 30px;
     margin-right: 0;
     padding: 0;

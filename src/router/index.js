@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import FcAbout from '@/views/About'
 import FcOrders from '@/views/Orders'
+import FkOrderInfo from '@/views/OrderInfo'
+
+
 
 Vue.use(VueRouter)
 
@@ -25,6 +28,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: FcAbout
+  },
+  {
+    path: '/orderinfo',
+    name: 'orderInfo',
+    component: FkOrderInfo
   }
 ]
 

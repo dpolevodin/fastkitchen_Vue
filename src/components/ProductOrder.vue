@@ -15,6 +15,7 @@
 <script>
 import {mutationTypes as orderMutationTypes} from '@/store/modules/order'
 
+
 export default {
     name: 'FkProductOrder',
     props: {
