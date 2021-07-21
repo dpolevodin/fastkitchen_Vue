@@ -12,6 +12,7 @@
 import {mapGetters} from 'vuex'
 import {mutationTypes as deliveryMutationTypes} from '@/store/modules/delivery'
 
+
 export default {
     name: 'FkButton',
     props: {

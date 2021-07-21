@@ -1,13 +1,13 @@
 <template>
 <div class="container-switch">
-  <label class="switch">
-    <input type="checkbox" @click="applySale">
+  <label class="switch" for="checkbox">
+    <input type="checkbox" id="checkbox" v-model="checked" @change="checkedSlider" >
     <span class="slider round"></span>
   </label>
     <span class="pick-up-info">
         Pick-up
         <span class="sale-info">
-            -{{ getDeliverySale }} %
+            -{{ getDeliverySale }} % {{checkedState}} {{checked}}
         </span>
     </span>
 </div>
@@ -21,14 +21,26 @@ export default {
     computed: {
         getDeliverySale() {
             return this.$store.state.delivery.deliverySale * 100
-        }
+        },
+        checkedState() {
+          return this.checked
+        } 
     },
     methods: {
-        applySale() {
-            this.$store.commit(deliveryMutationTypes.changeDeliveryType);
+        checkedSlider() {
+            if (!this.checked) {
+              this.$store.commit(deliveryMutationTypes.offPickUp);
+            } else if (this.checked) {
+              this.$store.commit(deliveryMutationTypes.onPickUp)
+            } else {
+              this.$store.commit(deliveryMutationTypes.onPickUp)
+            }
+
+            
+            }
         }
     }
-}
+  
 </script>
 
 <style>
@@ -41,10 +53,8 @@ export default {
   margin-left: 30px;
   margin-bottom: 30px
 }
-
 /* Hide default HTML checkbox */
 .switch input {display:none;}
-
 /* The slider */
 .slider {
   position: absolute;
@@ -57,7 +67,6 @@ export default {
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -69,30 +78,24 @@ export default {
   -webkit-transition: .4s;
   transition: .4s;
 }
-
 input:checked + .slider {
   background-color: #7AC93B;
 }
-
 input:focus + .slider {
   box-shadow: 0 0 1px #99E061;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
-
 .pick-up-info {
     display: inline-block;
     position: relative;
@@ -100,11 +103,9 @@ input:checked + .slider:before {
     vertical-align: top;
     margin-top: 6px
 }
-
 .container-switch {
     display: inline-block;
 }
-
 .sale-info {
     color: maroon;
     font-weight: bold;

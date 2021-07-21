@@ -7,20 +7,20 @@ const state = {
 
 export const mutationTypes = {
     addDeliveryInfo: '[delivery] add delivery info',
-    changeDeliveryType: '[delivery] change delivery type',
-    addAmount: '[delivery] add Amount'
+    onPickUp: '[delivery] pickUp on',
+    offPickUp: '[delivery] pickUp off'
+
 }
 
 const mutations = {
     [mutationTypes.addDeliveryInfo](state, payload) {
         state.deliveries = payload
     },
-    [mutationTypes.changeDeliveryType](state) {
+    [mutationTypes.onPickUp](state) {
         state.pickUp = true;
-        state.deliveries.amount -= state.deliveries.amount * state.deliverySale
     },
-    [mutationTypes.addAmount](state) {
-        state.amount++
+    [mutationTypes.offPickUp](state) {
+        state.pickUp = false;
     }
 }
 

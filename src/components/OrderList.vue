@@ -49,10 +49,11 @@
             v-model="deliveryInfo.deliveryTime"
             />
       </fieldset>
-      
+        {{SliderChecked}}
       <fk-slider />
 
       <fk-button :payload='deliveryInfo' />
+      
   </div>
 </template>
 
@@ -85,6 +86,8 @@ export default {
                 deliveryTime: this.deliveryTime,
                 amount: this.$store.getters.productSumValue}
         }
+
+        
     }
     }
 

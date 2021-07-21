@@ -1,6 +1,6 @@
 <template>
   <div class="main-plate">
-      <img src="img/plate.png">
+      <img src="img/plate.png" alt="fast kitchen">
   </div>
 </template>
 
