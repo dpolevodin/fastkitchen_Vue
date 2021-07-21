@@ -17,42 +17,43 @@
           <li>
               FINAL COST:
               <div class="product-cost">
-                  {{productSumValue}} $
+                  {{calcTotalSum}} $
               </div>
           </li>
       </ul>
-      <p>Phone</p>
+
+      <fk-slider />
+
+      <p class="delivery-info">Phone</p>
       <fieldset class="form-group">
         <input type="text"
             class="form-control"
             size="46"
-            placeholder="+7"
+            placeholder=" +7(XXX)XXX-XX-XX"
             v-model="deliveryInfo.phone"
             />
       </fieldset>
-
-      <p>Delivery adress</p>
-      <fieldset class="form-group">
-        <input type="text"
-            class="form-control" 
-            size="46"
-            v-model="deliveryInfo.deliveryAdress"
-            />
-      </fieldset>
       
-      <p>Delivery time</p>
+      <p class="delivery-info">Delivery adress</p>
       <fieldset class="form-group">
         <input type="text" 
             class="form-control"
             size="46"
-            placeholder="Now"
-            v-model="deliveryInfo.deliveryTime"
+            placeholder=" 8 Birch Road Waterford Park, 56, f.224"
+            v-model="deliveryInfo.deliveryAdress"
             />
+        </fieldset>
+        
+        <p class="delivery-info">Delivery time</p>
+      <fieldset class="form-group">
+        <select class="form-control-dp" v-model="deliveryInfo.deliveryTime">
+          <option v-for="time in getTimer" :key="time">
+              {{ time }}
+          </option>
+      </select>
       </fieldset>
-        {{SliderChecked}}
-      <fk-slider />
 
-      <fk-button :payload='deliveryInfo' />
+      <fk-button :payload="deliveryInfo" :totalSum="calcTotalSum" />
       
   </div>
 </template>
@@ -61,7 +62,6 @@
 import {mapGetters} from 'vuex'
 import FkButton from '@/components/Button'
 import FkSlider from '@/components/Slider'
-
 
 
 export default {
@@ -76,17 +76,31 @@ export default {
         }
     },
     computed: {
-        ...mapGetters([
-                'productSumValue'
-        ]),
+        ...mapGetters({
+            totalSumFromCart: 'productSumValue'
+        }),
         deliveryInfo() {
             return {
                 phone: this.phone,
                 deliveryAdress: this.deliveryAdress,
                 deliveryTime: this.deliveryTime,
-                amount: this.$store.getters.productSumValue}
+                amount: this.calcTotalSum
+                }
+        },
+        calcTotalSum() {
+            if (this.$store.state.delivery.pickUp) {
+                const sum = this.totalSumFromCart
+                return sum - (sum * this.$store.state.delivery.deliverySale)
+            }
+            return this.totalSumFromCart
+        },
+        getTimer() {
+            let timeArr = []
+            for (let i = 0; i < 25; i++) {
+                timeArr.push('' + i + ':00')
+            }
+            return timeArr
         }
-
         
     }
     }
@@ -98,7 +112,7 @@ export default {
 p {
     display: inline-block;
     margin: 0 15px;
-    font-size: 14px;
+    font-size: 16px;
 }
 ul {
     display: block;
@@ -114,7 +128,7 @@ li {
     border-bottom: 1px solid #DBE1E9;
 }
 li:last-child {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-bottom: 0;
     font-weight: bold;
 }
@@ -142,6 +156,12 @@ h1 {
     height: 50px;
 }
 .form-control[placeholder] {
+    font-size: 14px;
+}
+
+.form-control-dp {
+    width: 100px;
+    height: 40px;
     font-size: 14px;
 }
 
@@ -176,6 +196,10 @@ h1 {
 .marker {
     margin-left: 8px;
     margin-top: 3px;
+}
+
+.delivery-info {
+    display: block;
 }
 
 </style>

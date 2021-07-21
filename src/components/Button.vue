@@ -2,7 +2,7 @@
       <button @click="acceptOrder">
           <span>Order now</span>
           <div class="btn-order">
-              <span id="total">{{productSumValue}} $</span>
+              <span id="total">{{totalSum}} $</span>
           </div>
       </button>
 
@@ -16,7 +16,13 @@ import {mutationTypes as deliveryMutationTypes} from '@/store/modules/delivery'
 export default {
     name: 'FkButton',
     props: {
-        payload: Object
+        payload: {
+            type: Object
+        },
+        totalSum: {
+            type: Number,
+            required: true
+        }
     },
     methods: {
         acceptOrder() {
