@@ -2,19 +2,19 @@
   <div class="main-plate">
       <img src="img/plate.png" alt="fast kitchen">
       <div class="cheese">
-        <div class="cheese-value">X1</div>
+        <div class="cheese-value">X {{productsValue.cheese.value}}</div>
         <img src="img/cheese_plate.png" alt="cheese">
       </div>
       <div class="cucumber">
-        <div class="cucumber-value">X1</div>
+        <div class="cucumber-value">X {{productsValue.cucumber.value}}</div>
         <img src="img/cucumber_plate.png" alt="cucumber">
       </div>
       <div class="bread">
-        <div class="bread-value">X1</div>
+        <div class="bread-value">X {{productsValue.bread.value}}</div>
         <img src="img/bread_plate.png" alt="bread">
       </div>
       <div class="salami">
-        <div class="salami-value">X1</div>
+        <div class="salami-value">X {{productsValue.salami.value}}</div>
         <img src="img/salami_plate.png" alt="salami">
       </div>
   </div>
@@ -22,7 +22,12 @@
 
 <script>
 export default {
-    name: 'FkPlate'
+    name: 'FkPlate',
+    computed: {
+      productsValue() {
+        return this.$store.state.order
+      }
+    }
 }
 </script>
 
