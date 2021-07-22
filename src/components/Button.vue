@@ -49,7 +49,8 @@ button {
     margin-left: 30px;
     margin-right: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
 }
 
 span {
@@ -69,12 +70,14 @@ span {
     height: 38px;
     border-radius: 5px;
     background-color: #FFFFFF;
+    font-size: 10px;
     
 }
 
 #total {
     display: block;
     color: black;
-    margin-top: 7px
+    margin-top: 7px;
+    font-size: 18px;
 }
 </style>

@@ -44,4 +44,8 @@ h1 {
     max-width: 480px;
     font-size: 36px;
 }
+
+.main-page {
+    font-family: 'Inter', sans-serif;
+}
 </style>

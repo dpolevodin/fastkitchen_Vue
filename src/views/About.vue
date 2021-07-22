@@ -36,6 +36,7 @@ export default {
 
 .bg {
   height: 960px;
+  font-family: 'Inter', sans-serif;
   background: url(/img/bg.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -60,6 +61,7 @@ img {
 
 p {
   display: inline-block;
+  text-align: center;
   width: 1000px;
   font-size: 50px;
   position: absolute;
@@ -70,8 +72,8 @@ p {
 .group-food {
   display: block;
   position: absolute;
-  margin-right: 900px;
-  margin-bottom: 250px;
+  margin-right: 700px;
+  margin-bottom: 150px;
   filter: drop-shadow(3px 5px 5px rgb(82, 73, 73));
 }
 

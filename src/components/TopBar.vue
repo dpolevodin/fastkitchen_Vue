@@ -60,5 +60,7 @@ li:last-child {
     display: block;
     border-bottom: 1px solid #E1D8DC;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
 }
 </style>

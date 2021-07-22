@@ -61,6 +61,7 @@ li {
     margin-top: 100px;
     margin-left: 360px;
     font-size: 30px;
+    font-family: 'Inter', sans-serif;
 }
 
 .group-food {
