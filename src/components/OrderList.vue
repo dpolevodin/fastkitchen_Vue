@@ -171,7 +171,7 @@ h1 {
     position: absolute;
     right: 0px;
     width: 415px;
-    height: 90%;
+    height: 92%;
     background-color: white;
     
 }
