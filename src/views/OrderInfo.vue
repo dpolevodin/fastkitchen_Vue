@@ -66,14 +66,17 @@ li {
 
 .group-food {
     display: inline-block;
-    margin-right: 600px;
-    margin-bottom: 100px;
+    margin-right: 400px;
+    margin-bottom: 40px;
+    filter: drop-shadow(3px 5px 5px rgb(82, 73, 73));
     animation: 1s linear 0s normal none infinite running rot;
     -webkit-animation: 1s linear 0s normal none infinite running rot;
 }
 
 img.rot {
   display: inline-block;
+  width: 500px;
+  height: 500px;
   animation: 0s linear 0s normal none infinite running rot;
   -webkit-animation: 0s linear 0s normal none infinite running rot;
 
