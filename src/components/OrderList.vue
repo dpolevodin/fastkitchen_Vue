@@ -2,7 +2,7 @@
   <div class="order-list">
       <h1>
         <img src="img/cart.png" alt="cart image">
-        <span>30$</span>
+        <span>{{calcTotalSum}}$</span>
       </h1>
       <ul>
            <li v-for="(value, product) in products" :key="product" >

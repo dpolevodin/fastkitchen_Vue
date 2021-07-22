@@ -1,11 +1,6 @@
 <template>
   <div class="container">
-      go to the kitchen button
-      <div>
-        <div class="group-food">
-          <img src="img/group.png" alt="group">
-      </div>
-      </div>
+      Contacts
   </div>
 </template>
 
@@ -24,10 +19,5 @@ export default {
   margin-top: 100px;
   margin-left: 360px;
   font-size: 30px;
-}
-
-img {
-  width: 200px;
-  height: 200px;
 }
 </style>

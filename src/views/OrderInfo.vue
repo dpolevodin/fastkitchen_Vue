@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-      <h3>Thank you for the order!</h3>
+      <div>
+         <h3>Thank you for the order!</h3>
       <h4>Order's information:</h4>
       <ul class="orders-information">
           <li>
@@ -20,8 +21,11 @@
                   </li>
               </ul>
           </li>
-      </ul>
-
+      </ul> 
+      </div>
+      <div class="group-food">
+          <img class="rot" src="img/group.png" alt="group">
+      </div>    
   </div>
 </template>
 
@@ -57,6 +61,37 @@ li {
     margin-top: 100px;
     margin-left: 360px;
     font-size: 30px;
+}
+
+.group-food {
+    display: inline-block;
+    margin-right: 600px;
+    margin-bottom: 100px;
+    animation: 1s linear 0s normal none infinite running rot;
+    -webkit-animation: 1s linear 0s normal none infinite running rot;
+}
+
+img.rot {
+  display: inline-block;
+  animation: 0s linear 0s normal none infinite running rot;
+  -webkit-animation: 0s linear 0s normal none infinite running rot;
+
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 </style>

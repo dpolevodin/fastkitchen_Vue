@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import FcAbout from '@/views/About'
 import FcOrders from '@/views/Orders'
 import FkOrderInfo from '@/views/OrderInfo'
+import FkContacts from '@/views/Contacts'
 
 
 
@@ -22,7 +23,7 @@ const routes = [
   {
     path: '/contacts',
     name: 'contacts',
-    component: FcAbout
+    component: FkContacts
   },
   {
     path: '/about',
