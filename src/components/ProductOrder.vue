@@ -70,6 +70,7 @@ button {
     border-radius: 10px;
     margin-right: 20px;
     border: 0;
+    cursor: pointer;
 }
 
 .container-order {

@@ -51,6 +51,7 @@ button {
     padding: 0;
     font-size: 10px;
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
 }
 
 span {
