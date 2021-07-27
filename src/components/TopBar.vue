@@ -7,17 +7,17 @@
             </div>
             <ul>
                 <li>
-                    <router-link :to="{name: 'orders'}">
+                    <router-link class="header-link" :to="{name: 'orders'}">
                         Orders
                     </router-link> 
                 </li>
                 <li>
-                    <router-link :to="{name: 'contacts'}">
+                    <router-link class="header-link" :to="{name: 'contacts'}">
                         Contacts
                     </router-link> 
                 </li>
                 <li>
-                    <router-link :to="{name: 'about'}">
+                    <router-link class="header-link" :to="{name: 'about'}">
                         About
                     </router-link> 
                 </li>
@@ -52,6 +52,7 @@ ul {
 li {
     display: inline-block;
     margin-right: 50px;
+    text-decoration: none;
 }
 li:last-child {
     margin-right: 0;
@@ -62,5 +63,10 @@ li:last-child {
     margin: 0;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
+}
+
+.header-link {
+    text-decoration: none;
+    color: initial;
 }
 </style>
