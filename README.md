@@ -1,4 +1,5 @@
 # fastkit
+site is published at https://dpolevodin.github.io/fastkitchen_Vue/
 
 ## Project setup
 ```
